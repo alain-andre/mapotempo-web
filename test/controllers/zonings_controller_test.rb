@@ -199,4 +199,9 @@ class ZoningsControllerTest < ActionController::TestCase
       end
     end
   end
+
+  test 'should not crach when invalid integer is given for isochrone' do
+    patch :isochrone, format: :json, zoning_id: @zoning.id, planning_id: plannings(:planning_one).id, size: 'one', vehicle_usage_set_id: vehicle_usage_sets(:vehicle_usage_set_one).id
+    assert_response :success
+  end
 end
