@@ -19,7 +19,7 @@ class VehicleTest < ActiveSupport::TestCase
   end
 
   test 'should save' do
-    vehicle = customers(:customer_one).vehicles.build(name: '1')
+    vehicle = customers(:customer_one).vehicles.build(name: '1', max_distance: 200)
     vehicle.save!
   end
 

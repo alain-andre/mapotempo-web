@@ -380,6 +380,7 @@ en:
         confirmed_at: Confirmed at
         prefered_unit: Prefered unit
       vehicle:
+        max_distance: Maximum distance
         name: Name
         emission: Emission
         consumption: Consumption
@@ -765,6 +766,8 @@ en:
     delete_vehicle:
       success: Vehicle deleted successfully
     form:
+      max_distance: Default maximum distance
+      max_distance_default: '%{n} (default value)'
       name: Account
       default_value: Default values
       outputs: Outputs
@@ -1529,6 +1532,8 @@ en:
         out_of_drive_time_help: Vehicle shift time exceeded
         out_of_work_time: Out of work time
         out_of_work_time_help: Driver work time exceeded (service included)
+        out_of_max_distance: Maximum possible distance exceeded
+        out_of_max_distance_help: Maximum possible distance exceeded
         no_path: Unreachable destination
         no_path_help: 'Unreachable destination: missing or no path to or from the
           destination to find a route'
@@ -1886,6 +1891,9 @@ en:
         optionnal: optionnal
         deprecated: deprecated
     form:
+      max_distance:
+        help: Maximum achievable distance in kilometers
+        help_miles: Maximum distance achievable in miles
       ref:
         help: A free reference
       emissions:
