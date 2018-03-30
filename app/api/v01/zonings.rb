@@ -324,6 +324,8 @@ class V01::Zonings < Grape::API
     get ':id/polygon_by_point' do
       zoning = current_customer.zonings.where(id: params[:id]).first
 
+      error! 'Zoning not found', 404 if zoning.nil?
+
       zone, pip_distance = zoning.zones.map{ |zone|
         [zone, zone.inside_distance(params[:lat], params[:lng]) || 0]
       }.max_by{ |_zone, pip_distance|
