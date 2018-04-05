@@ -1,3 +1,7 @@
+require './test/git_modified_matcher'
+ENV['COV'] = 'false'
+ENV['BRAKEMAN'] = 'false'
+
 # Limit directory being watched
 directories %w[app db config lib test]
 # Clear console when launching guard
@@ -8,9 +12,11 @@ notification :libnotify, timeout: 5, transient: true, append: false, urgency: :c
 interactor :off
 
 guard :minitest, all_on_start: false do
-  watch(%r{^test/(.*)\/?(.*)_test\.rb$})
-  watch(%r{^lib/(.*/)?([^/]+)\.rb$}) { |m| "test/lib/#{m[1]}/#{m[2]}_test.rb" }
-  watch(%r{^test/test_helper\.rb$})  { 'test' }
+  watch(%r{^lib/(.*)\.rb$}) { |m| "test/lib/#{m[1]}_test.rb" }
+  watch(%r{^app/(.*)\.rb$}) { |m| "test/#{m[1]}_test.rb" }
+  watch(%r{^test/(.*)_test\.rb$}) { |m| "test/#{m[1]}_test.rb" }
+  watch(%r{^test/test_helper\.rb$}) { 'test' }
+  watch(GitModifiedMatcher.new) { |m| m[:file] }
 end
 
 guard 'spring', bundler: true do

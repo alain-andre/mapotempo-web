@@ -65,6 +65,7 @@ group :test do
   gem 'html_validation'
   gem 'minitest-around'
   gem 'minitest-focus'
+  gem 'minitest-line'
   gem 'minitest-stub_any_instance'
   gem 'simplecov', require: false
   gem 'tidy-html5', github: 'moneyadviceservice/tidy-html5-gem'

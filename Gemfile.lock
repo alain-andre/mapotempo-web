@@ -422,6 +422,8 @@ GEM
       minitest (~> 5.0)
     minitest-focus (1.1.2)
       minitest (>= 4, < 6)
+    minitest-line (0.6.4)
+      minitest (~> 5.0)
     minitest-stub_any_instance (1.0.1)
     multi_json (1.12.1)
     multi_xml (0.6.0)
@@ -744,6 +746,7 @@ DEPENDENCIES
   mapotempo_web_import_vehicle_store!
   minitest-around
   minitest-focus
+  minitest-line
   minitest-stub_any_instance
   mustache
   nexmo
