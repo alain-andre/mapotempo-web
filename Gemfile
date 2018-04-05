@@ -62,6 +62,7 @@ group :development, :test do
   gem 'awesome_print'
 
   gem 'brakeman'
+  gem 'factory_bot_rails'
 end
 
 group :test do
