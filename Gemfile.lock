@@ -253,7 +253,6 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.1.2)
     devise-i18n-views (0.3.7)
-    diff-lcs (1.3)
     docile (1.1.5)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
@@ -311,6 +310,9 @@ GEM
       activerecord (>= 4.1.0)
       guard (~> 2.3)
       guard-compat (~> 1.1)
+    guard-minitest (2.4.6)
+      guard-compat (~> 1.2)
+      minitest (>= 3.0)
     guard-process (1.2.1)
       guard-compat (~> 1.2, >= 1.2.1)
       spoon (~> 0.0.1)
@@ -320,6 +322,10 @@ GEM
     guard-rake (1.0.0)
       guard
       rake
+    guard-spring (1.1.1)
+      guard (~> 2.0)
+      guard-compat (~> 1.1)
+      spring
     gyoku (1.3.1)
       builder (>= 2.1.2)
     hashdiff (0.3.4)
@@ -537,23 +543,6 @@ GEM
     rgeo (0.6.0)
     rgeo-geojson (0.4.3)
       rgeo (~> 0.5)
-    rspec-core (3.6.0)
-      rspec-support (~> 3.6.0)
-    rspec-expectations (3.6.0)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.6.0)
-    rspec-mocks (3.6.0)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.6.0)
-    rspec-rails (3.6.0)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.6.0)
-      rspec-expectations (~> 3.6.0)
-      rspec-mocks (~> 3.6.0)
-      rspec-support (~> 3.6.0)
-    rspec-support (3.6.0)
     rubocop (0.48.1)
       parser (>= 2.3.3.1, < 3.0)
       powerpack (~> 0.1)
@@ -718,9 +707,11 @@ DEPENDENCIES
   guard
   guard-delayed
   guard-migrate
+  guard-minitest
   guard-process
   guard-rails
   guard-rake
+  guard-spring
   html_validation
   http_accept_language
   i18n-js
@@ -777,7 +768,6 @@ DEPENDENCIES
   rest-client
   rgeo
   rgeo-geojson
-  rspec-rails
   rubocop
   rubyzip
   sanitize
